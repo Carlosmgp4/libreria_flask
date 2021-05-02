@@ -5,6 +5,35 @@
     <title>{{libro.title}}</title>
 </head>
 <body>
-    <h1>{{libro.title}}</h1>
+    {% if libro.status=="MEAP" %}
+        <h1>Este libro no se ha publicado</h1>
+    {% else %}
+        <h1>{{libro.title}}</h1>
+        <h2><img src="{{libro.thumbnailUrl}}"></h2>
+        <p>Número de páginas: {{libro.pageCount}}</p>
+        <p>Trama: {{libro.shortDescription}}</p>
+
+        {% if num_autores > 1 %}
+            <p>Autores: </p>
+        {% else %}
+            <p>Autor: </p>
+        {% endif %}
+        <ul>
+        {% for n in libro.authors -%}
+            <li>{{n}}</li>
+        {% endfor -%}
+        </ul>
+
+        {% if num_categoria > 1 %}
+            <p>Categorías: </p>
+        {% else %}
+            <p>Categoría: </p>
+        {% endif %}
+        <ul>
+        {% for c in libro.categories -%}
+            <li>{{c}}</li>
+        {% endfor -%}
+        </ul>
+    {% endif %}
 </body>
 </html>
