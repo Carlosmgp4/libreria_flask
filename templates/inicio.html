@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UFT-8">
+    <title>Biblioteca</title>
+</head>
+<body>
+    <h1>Biblioteca</h1>
+    {% if lista %}
+        {% for elem in lista -%}
+            <p><a href="/{{ elem.isbn }}">{{ elem.title }}</a></p>
+        {% endfor -%}
+    {% else %}
+        <p>No hay enlaces</p>
+    {% endif %}
+</body>
+</html>
