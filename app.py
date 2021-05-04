@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, abort
 import json
 app = Flask(__name__)
@@ -27,5 +28,5 @@ def categoria(nomcate):
 
     return render_template("categoria.html",lis=lis,nom=nomcate)
                 
-
-app.run("0.0.0.0",5000,debug=True)
+port=os.environ["PORT"]
+app.run("0.0.0.0", int(port) ,debug=False)
