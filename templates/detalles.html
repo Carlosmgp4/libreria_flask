@@ -31,7 +31,7 @@
         {% endif %}
         <ul>
         {% for c in libro.categories -%}
-            <li>{{c}}</li>
+            <li><a href="/categoria/{{c}}">{{c}}</a></li>
         {% endfor -%}
         </ul>
     {% endif %}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UFT-8">
+    <title>{{nom}}</title>
+</head>
+<body>
+    <h1>Categoría: {{nom}}</h1>
+    <ul>
+    {% for n in lis -%}
+        <li>{{n}}</li>
+    {% endfor -%}
+    </ul>
+</body>
+</html>

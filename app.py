@@ -18,4 +18,14 @@ def detalles(isbn):
             return render_template("detalles.html",libro=lib,num_autores=num_autores,num_categoria=num_categoria)
     abort(404)
 
+@app.route('/categoria/<nomcate>')
+def categoria(nomcate):
+    lis=[]
+    for ca in datos:
+        if nomcate in ca.get("categories"):
+            lis.append(ca.get("title"))
+
+    return render_template("categoria.html",lis=lis,nom=nomcate)
+                
+
 app.run("0.0.0.0",5000,debug=True)
