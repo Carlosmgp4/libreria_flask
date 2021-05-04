@@ -16,7 +16,7 @@ def detalles(isbn):
         if lib.get("isbn")==isbn:
             num_autores = len(lib.get("authors"))
             num_categoria = len(lib.get("categories"))
-            return render_template("detalles.html",libro=lib,num_autores=num_autores,num_categoria=num_categoria)
+            return render_template("detalles.html",libro=libro,num_autores=num_autores,num_categoria=num_categoria)
     abort(404)
 
 @app.route('/categoria/<nomcate>')
